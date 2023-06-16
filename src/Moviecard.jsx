@@ -1,6 +1,9 @@
+import { SyntheticEvent } from "react";
+import err from './err.png'
 
-function errorimage(image){
-    image.currentTarget.src = './error.png'
+const errorimage = (event) => {
+    event.target.src = 'err.png';
+     
 }
 
 function Moviecard({movie}){
@@ -13,8 +16,8 @@ function Moviecard({movie}){
                 </div>
 
                 <div>
-                    <img src={movie.Poster !== '' || movie.Poster !== 'N/A' ? movie.Poster : 'err.png'} alt='No image provided'
-                    //onError={(e) => {e.currentTarget.setAttribute('src','error.png')}}
+                    <img src={movie.Poster !== '' || movie.Poster !== 'N/A' ? movie.Poster : err} alt={'err.png'}
+                    //onError={errorimage}
                     //Had trouble setting the default pic to 400 error pic
                     />
                 </div>
